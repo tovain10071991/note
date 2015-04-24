@@ -1,0 +1,113 @@
+struct mm_struct {
+	struct vm_area_struct *mmap;            //指向虚存空间描述符的链表头
+	struct rb_root mm_rb;							//指向虚存空间描述符的红黑树的根
+	u32 vmacache_seqnum;                   /* per-thread vmacache */
+#ifdef CONFIG_MMU
+	unsigned long (*get_unmapped_area) (struct file *filp,
+									unsigned long addr, unsigned long len,
+									unsigned long pgoff, unsigned long flags);
+#endif
+354         unsigned long mmap_base;                /* base of mmap area */
+355         unsigned long mmap_legacy_base;         /* base of mmap area in bottom-up allocations */
+356         unsigned long task_size;                /* size of task vm space */
+357         unsigned long highest_vm_end;           /* highest vma end address */
+358         pgd_t * pgd;
+359         atomic_t mm_users;                      /* How many users with user space? */
+360         atomic_t mm_count;                      /* How many references to "struct mm_struct" (users count as 1) */
+361         atomic_long_t nr_ptes;                  /* Page table pages */
+362         int map_count;                          /* number of VMAs */
+363 
+364         spinlock_t page_table_lock;             /* Protects page tables and some counters */
+365         struct rw_semaphore mmap_sem;
+366 
+367         struct list_head mmlist;                /* List of maybe swapped mm's.  These are globally strung
+368                                                  * together off init_mm.mmlist, and are protected
+369                                                  * by mmlist_lock
+370                                                  */
+371 
+372 
+373         unsigned long hiwater_rss;      /* High-watermark of RSS usage */
+374         unsigned long hiwater_vm;       /* High-water virtual memory usage */
+375 
+376         unsigned long total_vm;         /* Total pages mapped */
+377         unsigned long locked_vm;        /* Pages that have PG_mlocked set */
+378         unsigned long pinned_vm;        /* Refcount permanently increased */
+379         unsigned long shared_vm;        /* Shared pages (files) */
+380         unsigned long exec_vm;          /* VM_EXEC & ~VM_WRITE */
+381         unsigned long stack_vm;         /* VM_GROWSUP/DOWN */
+382         unsigned long def_flags;
+383         unsigned long start_code, end_code, start_data, end_data;
+384         unsigned long start_brk, brk, start_stack;
+385         unsigned long arg_start, arg_end, env_start, env_end;
+386 
+387         unsigned long saved_auxv[AT_VECTOR_SIZE]; /* for /proc/PID/auxv */
+388 
+389         /*
+390          * Special counters, in some configurations protected by the
+391          * page_table_lock, in other configurations by being atomic.
+392          */
+393         struct mm_rss_stat rss_stat;
+394 
+395         struct linux_binfmt *binfmt;
+396 
+397         cpumask_var_t cpu_vm_mask_var;
+398 
+399         /* Architecture-specific MM context */
+400         mm_context_t context;
+401 
+402         unsigned long flags; /* Must use atomic bitops to access the bits */
+403 
+404         struct core_state *core_state; /* coredumping support */
+405 #ifdef CONFIG_AIO
+406         spinlock_t                      ioctx_lock;
+407         struct kioctx_table __rcu       *ioctx_table;
+408 #endif
+409 #ifdef CONFIG_MEMCG
+410         /*
+411          * "owner" points to a task that is regarded as the canonical
+412          * user/owner of this mm. All of the following must be true in
+413          * order for it to be changed:
+414          *
+415          * current == mm->owner
+416          * current->mm != mm
+417          * new_owner->mm == mm
+418          * new_owner->alloc_lock is held
+419          */
+420         struct task_struct __rcu *owner;
+421 #endif
+422 
+423         /* store ref to file /proc/<pid>/exe symlink points to */
+424         struct file *exe_file;
+425 #ifdef CONFIG_MMU_NOTIFIER
+426         struct mmu_notifier_mm *mmu_notifier_mm;
+427 #endif
+428 #if defined(CONFIG_TRANSPARENT_HUGEPAGE) && !USE_SPLIT_PMD_PTLOCKS
+429         pgtable_t pmd_huge_pte; /* protected by page_table_lock */
+430 #endif
+431 #ifdef CONFIG_CPUMASK_OFFSTACK
+432         struct cpumask cpumask_allocation;
+433 #endif
+434 #ifdef CONFIG_NUMA_BALANCING
+435         /*
+436          * numa_next_scan is the next time that the PTEs will be marked
+437          * pte_numa. NUMA hinting faults will gather statistics and migrate
+438          * pages to new nodes if necessary.
+439          */
+440         unsigned long numa_next_scan;
+441 
+442         /* Restart point for scanning and setting pte_numa */
+443         unsigned long numa_scan_offset;
+444 
+445         /* numa_scan_seq prevents two threads setting pte_numa */
+446         int numa_scan_seq;
+447 #endif
+448 #if defined(CONFIG_NUMA_BALANCING) || defined(CONFIG_COMPACTION)
+449         /*
+450          * An operation with batched TLB flushing is going on. Anything that
+451          * can move process memory needs to flush the TLB when moving a
+452          * PROT_NONE or PROT_NUMA mapped page.
+453          */
+454         bool tlb_flush_pending;
+455 #endif
+456         struct uprobes_state uprobes_state;
+457 };

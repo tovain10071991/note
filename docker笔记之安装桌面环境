@@ -1,0 +1,22 @@
+安装桌面环境(https://github.com/rogaha/docker-desktop)
+$ git clone https://github.com/rogaha/docker-desktop.git
+$ cd docker-desktop
+$ sudo docker build -t skyin/docker-desktop .	#build:创建镜像；-t <tag_name>：定义镜像标签名
+$ CONTAINER_ID=$(sudo docker run -d -P [username]/docker-desktop)
+$ echo $(sudo docker logs $CONTAINER_ID | sed -n 1p)
+User: docker Password: xxxxxxxxxxxx
+$ sudo docker port $CONTAINER_ID 22
+49155 						#This is the external port that forwards to the ssh service running inside of the container as port 22
+$ ifconfig
+docker ...
+	inet 172.17.42.1 ...
+$ cd config
+$ ssh docker@172.17.42.1 -p 49155 "sh -c './docker-desktop -s 800x600 -d 10 > /dev/null 2>&1 &'"						#./docker-desktop -h 可查看参数
+$ xpra --ssh="ssh -p 49155" attach ssh:docker@172.17.42.1:10
+
+
+安装xpra(http://winswitch.org/downloads/rpm-repository.html?dist_select=Fedora)
+# rpm --import http://winswitch.org/gpg.asc
+# cd /etc/yum.repos.d/
+# curl -O https://winswitch.org/downloads/Fedora/winswitch.repo
+# yum install xpra.x86_64

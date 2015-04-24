@@ -1,0 +1,818 @@
+********Start TNT_(instrument)********
+Thread 1 Context:
+     EIP=0x040011d0
+
+********Start ppIRStmt(st)********
+------ IMark(0x40011D0, 2, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t16 = GET:I32(24)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(8) = t16
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x40011D2:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x40011D2, 5, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t17 = Sub32(t16,0x4:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(24) = t17
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+STle(t17) = 0x40011D7:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x4004C80:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4004C80, 1, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t1 = GET:I32(28)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t19 = Sub32(t17,0x4:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(24) = t19
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+STle(t19) = t1
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4004C81, 2, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(28) = t19
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x4004C83:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4004C83, 1, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t3 = GET:I32(36)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t22 = Sub32(t19,0x4:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(24) = t22
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+STle(t22) = t3
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x4004C84:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4004C84, 1, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t5 = GET:I32(32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t24 = Sub32(t22,0x4:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(24) = t24
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+STle(t24) = t5
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x4004C85:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4004C85, 1, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t7 = GET:I32(20)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t26 = Sub32(t24,0x4:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(24) = t26
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+STle(t26) = t7
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4004C86, 3, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t9 = Sub32(t26,0x5C:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(40) = 0x6:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(44) = t26
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(48) = 0x5C:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(52) = 0x0:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x4004C89:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4004C89, 5, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t28 = Sub32(t9,0x4:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(24) = t28
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+STle(t28) = 0x4004C8E:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x4018BAB:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4018BAB, 3, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t30 = LDle:I32(t28)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(20) = t30
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(68) = 0x4018BAE:I32
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+------ IMark(0x4018BAE, 1, 0) ------
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t15 = LDle:I32(t28)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+t31 = Add32(t28,0x4:I32)
+********End ppIRStmt(st)********
+
+********Start ppIRStmt(st)********
+PUT(24) = t31
+********End ppIRStmt(st)********
+********i=0********
+tyenv:    t0:I32   t1:I32   t2:I32   t3:I32   t4:I32   t5:I32   t6:I32   t7:I32
+   t8:I32   t9:I32   t10:I32   t11:I32   t12:I32   t13:I32   t14:I32   t15:I32
+   t16:I32   t17:I32   t18:I32   t19:I32   t20:I32   t21:I32   t22:I32   t23:I32
+   t24:I32   t25:I32   t26:I32   t27:I32   t28:I32   t29:I32   t30:I32   t31:I32
+   t32:I32   
+
+
+------ IMark(0x40011D0, 2, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x40011D0, 2, 0) ------
+
+t16 = GET:I32(24)
+********Ist_WrTmp********
+  C: t16 = GET:I32(24)
+  V: t33 = GET:I32(360)
+********expr->tag != Iex_Const********
+********Iex_Get********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7EFB8:I32,t16,t33)
+
+PUT(8) = t16
+********Ist_Put********
+  V: PUT(344) = t33
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F000:I32,t16,t33)
+  C: PUT(8) = t16
+
+PUT(68) = 0x40011D2:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F068:I32,0x40011D2:I32,0x0:I32)
+  C: PUT(68) = 0x40011D2:I32
+
+------ IMark(0x40011D2, 5, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x40011D2, 5, 0) ------
+
+t17 = Sub32(t16,0x4:I32)
+********Ist_WrTmp********
+  C: t17 = Sub32(t16,0x4:I32)
+  V: t34 = Or32(t33,0x0:I32)
+  V: t35 = Left32(t34)
+  V: t36 = t35
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F138:I32,t17,t36)
+
+PUT(24) = t17
+********Ist_Put********
+  V: PUT(360) = t36
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F2C0:I32,t17,t36)
+  C: PUT(24) = t17
+
+STle(t17) = 0x40011D7:I32
+********Ist_Store********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tc)[rp=3]{0x380345e0}(0x61C7F348:I32,0x40011D7:I32,0x0:I32)
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t17,0x0:I32)
+  C: STle(t17) = 0x40011D7:I32
+
+PUT(68) = 0x4004C80:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F3B0:I32,0x4004C80:I32,0x0:I32)
+  C: PUT(68) = 0x4004C80:I32
+
+------ IMark(0x4004C80, 1, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4004C80, 1, 0) ------
+
+t1 = GET:I32(28)
+********Ist_WrTmp********
+  C: t1 = GET:I32(28)
+  V: t37 = GET:I32(364)
+********expr->tag != Iex_Const********
+********Iex_Get********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7F420:I32,t1,t37)
+
+t19 = Sub32(t17,0x4:I32)
+********Ist_WrTmp********
+  C: t19 = Sub32(t17,0x4:I32)
+  V: t38 = Or32(t36,0x0:I32)
+  V: t39 = Left32(t38)
+  V: t40 = t39
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F4C8:I32,t19,t40)
+
+PUT(24) = t19
+********Ist_Put********
+  V: PUT(360) = t40
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F1A0:I32,t19,t40)
+  C: PUT(24) = t19
+
+STle(t19) = t1
+********Ist_Store********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7F208:I32,t1,t37)
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t19,t37)
+  C: STle(t19) = t1
+
+------ IMark(0x4004C81, 2, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4004C81, 2, 0) ------
+
+PUT(28) = t19
+********Ist_Put********
+  V: PUT(364) = t40
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F278:I32,t19,t40)
+  C: PUT(28) = t19
+
+PUT(68) = 0x4004C83:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F6F8:I32,0x4004C83:I32,0x0:I32)
+  C: PUT(68) = 0x4004C83:I32
+
+------ IMark(0x4004C83, 1, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4004C83, 1, 0) ------
+
+t3 = GET:I32(36)
+********Ist_WrTmp********
+  C: t3 = GET:I32(36)
+  V: t41 = GET:I32(372)
+********expr->tag != Iex_Const********
+********Iex_Get********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7F768:I32,t3,t41)
+
+t22 = Sub32(t19,0x4:I32)
+********Ist_WrTmp********
+  C: t22 = Sub32(t19,0x4:I32)
+  V: t42 = Or32(t40,0x0:I32)
+  V: t43 = Left32(t42)
+  V: t44 = t43
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F810:I32,t22,t44)
+
+PUT(24) = t22
+********Ist_Put********
+  V: PUT(360) = t44
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F858:I32,t22,t44)
+  C: PUT(24) = t22
+
+STle(t22) = t3
+********Ist_Store********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7F8C0:I32,t3,t41)
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t22,t41)
+  C: STle(t22) = t3
+
+PUT(68) = 0x4004C84:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F928:I32,0x4004C84:I32,0x0:I32)
+  C: PUT(68) = 0x4004C84:I32
+
+------ IMark(0x4004C84, 1, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4004C84, 1, 0) ------
+
+t5 = GET:I32(32)
+********Ist_WrTmp********
+  C: t5 = GET:I32(32)
+  V: t45 = GET:I32(368)
+********expr->tag != Iex_Const********
+********Iex_Get********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7F998:I32,t5,t45)
+
+t24 = Sub32(t22,0x4:I32)
+********Ist_WrTmp********
+  C: t24 = Sub32(t22,0x4:I32)
+  V: t46 = Or32(t44,0x0:I32)
+  V: t47 = Left32(t46)
+  V: t48 = t47
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7FA40:I32,t24,t48)
+
+PUT(24) = t24
+********Ist_Put********
+  V: PUT(360) = t48
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7FA88:I32,t24,t48)
+  C: PUT(24) = t24
+
+STle(t24) = t5
+********Ist_Store********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7FAF0:I32,t5,t45)
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t24,t45)
+  C: STle(t24) = t5
+
+PUT(68) = 0x4004C85:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FB58:I32,0x4004C85:I32,0x0:I32)
+  C: PUT(68) = 0x4004C85:I32
+
+------ IMark(0x4004C85, 1, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4004C85, 1, 0) ------
+
+t7 = GET:I32(20)
+********Ist_WrTmp********
+  C: t7 = GET:I32(20)
+  V: t49 = GET:I32(356)
+********expr->tag != Iex_Const********
+********Iex_Get********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7FBC8:I32,t7,t49)
+
+t26 = Sub32(t24,0x4:I32)
+********Ist_WrTmp********
+  C: t26 = Sub32(t24,0x4:I32)
+  V: t50 = Or32(t48,0x0:I32)
+  V: t51 = Left32(t50)
+  V: t52 = t51
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7FC70:I32,t26,t52)
+
+PUT(24) = t26
+********Ist_Put********
+  V: PUT(360) = t52
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7FCB8:I32,t26,t52)
+  C: PUT(24) = t26
+
+STle(t26) = t7
+********Ist_Store********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7FD20:I32,t7,t49)
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t26,t49)
+  C: STle(t26) = t7
+
+------ IMark(0x4004C86, 3, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4004C86, 3, 0) ------
+
+t9 = Sub32(t26,0x5C:I32)
+********Ist_WrTmp********
+  C: t9 = Sub32(t26,0x5C:I32)
+  V: t53 = Or32(t52,0x0:I32)
+  V: t54 = Left32(t53)
+  V: t55 = t54
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7FDF0:I32,t9,t55)
+
+PUT(40) = 0x6:I32
+********Ist_Put********
+  V: PUT(376) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FE58:I32,0x6:I32,0x0:I32)
+  C: PUT(40) = 0x6:I32
+
+PUT(44) = t26
+********Ist_Put********
+  V: PUT(380) = t52
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7FEA0:I32,t26,t52)
+  C: PUT(44) = t26
+
+PUT(48) = 0x5C:I32
+********Ist_Put********
+  V: PUT(384) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FF08:I32,0x5C:I32,0x0:I32)
+  C: PUT(48) = 0x5C:I32
+
+PUT(52) = 0x0:I32
+********Ist_Put********
+  V: PUT(388) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FF70:I32,0x0:I32,0x0:I32)
+  C: PUT(52) = 0x0:I32
+
+PUT(68) = 0x4004C89:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FFD8:I32,0x4004C89:I32,0x0:I32)
+  C: PUT(68) = 0x4004C89:I32
+
+------ IMark(0x4004C89, 5, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4004C89, 5, 0) ------
+
+t28 = Sub32(t9,0x4:I32)
+********Ist_WrTmp********
+  C: t28 = Sub32(t9,0x4:I32)
+  V: t56 = Or32(t55,0x0:I32)
+  V: t57 = Left32(t56)
+  V: t58 = t57
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C800A8:I32,t28,t58)
+
+PUT(24) = t28
+********Ist_Put********
+  V: PUT(360) = t58
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C800F0:I32,t28,t58)
+  C: PUT(24) = t28
+
+STle(t28) = 0x4004C8E:I32
+********Ist_Store********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tc)[rp=3]{0x380345e0}(0x61C80178:I32,0x4004C8E:I32,0x0:I32)
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t28,0x0:I32)
+  C: STle(t28) = 0x4004C8E:I32
+
+PUT(68) = 0x4018BAB:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C801E0:I32,0x4018BAB:I32,0x0:I32)
+  C: PUT(68) = 0x4018BAB:I32
+
+------ IMark(0x4018BAB, 3, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4018BAB, 3, 0) ------
+
+t30 = LDle:I32(t28)
+********Ist_WrTmp********
+  C: t30 = LDle:I32(t28)
+  V: t59 = DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_LOADV32le)[rp=1]{0x38029a40}(t28)
+  V: t60 = t59
+********expr->tag != Iex_Const********
+********Iex_Load********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_load_t)[rp=3]{0x38033df0}(0x61C80270:I32,t30,t60)
+
+PUT(20) = t30
+********Ist_Put********
+  V: PUT(356) = t60
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F510:I32,t30,t60)
+  C: PUT(20) = t30
+
+PUT(68) = 0x4018BAE:I32
+********Ist_Put********
+  V: PUT(404) = 0x0:I32
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F578:I32,0x4018BAE:I32,0x0:I32)
+  C: PUT(68) = 0x4018BAE:I32
+
+------ IMark(0x4018BAE, 1, 0) ------
+********Ist_IMark********
+  C: ------ IMark(0x4018BAE, 1, 0) ------
+
+t15 = LDle:I32(t28)
+********Ist_WrTmp********
+  C: t15 = LDle:I32(t28)
+  V: t61 = DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_LOADV32le)[rp=1]{0x38029a40}(t28)
+  V: t62 = t61
+********expr->tag != Iex_Const********
+********Iex_Load********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_load_t)[rp=3]{0x38033df0}(0x61C7F608:I32,t15,t62)
+
+t31 = Add32(t28,0x4:I32)
+********Ist_WrTmp********
+  C: t31 = Add32(t28,0x4:I32)
+  V: t63 = Or32(t58,0x0:I32)
+  V: t64 = Left32(t63)
+  V: t65 = t64
+********expr->tag != Iex_Const********
+********Iex_Binop********
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F6B0:I32,t31,t65)
+
+PUT(24) = t31
+********Ist_Put********
+  V: PUT(360) = t65
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C80598:I32,t31,t65)
+  C: PUT(24) = t31
+sb_in->next = t15
+
+  V: DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_next_t)[rp=3]{0x3802a9c0}(0x61C805C0:I32,t15,t62)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_next_t)[rp=3]{0x3802a9c0}(0x61C805C0:I32,t15,t62)
+
+********Print sb_in********
+IRSB {
+   t0:I32   t1:I32   t2:I32   t3:I32   t4:I32   t5:I32   t6:I32   t7:I32
+   t8:I32   t9:I32   t10:I32   t11:I32   t12:I32   t13:I32   t14:I32   t15:I32
+   t16:I32   t17:I32   t18:I32   t19:I32   t20:I32   t21:I32   t22:I32   t23:I32
+   t24:I32   t25:I32   t26:I32   t27:I32   t28:I32   t29:I32   t30:I32   t31:I32
+   t32:I32   
+
+   ------ IMark(0x40011D0, 2, 0) ------
+   t16 = GET:I32(24)
+   PUT(8) = t16
+   PUT(68) = 0x40011D2:I32
+   ------ IMark(0x40011D2, 5, 0) ------
+   t17 = Sub32(t16,0x4:I32)
+   PUT(24) = t17
+   STle(t17) = 0x40011D7:I32
+   PUT(68) = 0x4004C80:I32
+   ------ IMark(0x4004C80, 1, 0) ------
+   t1 = GET:I32(28)
+   t19 = Sub32(t17,0x4:I32)
+   PUT(24) = t19
+   STle(t19) = t1
+   ------ IMark(0x4004C81, 2, 0) ------
+   PUT(28) = t19
+   PUT(68) = 0x4004C83:I32
+   ------ IMark(0x4004C83, 1, 0) ------
+   t3 = GET:I32(36)
+   t22 = Sub32(t19,0x4:I32)
+   PUT(24) = t22
+   STle(t22) = t3
+   PUT(68) = 0x4004C84:I32
+   ------ IMark(0x4004C84, 1, 0) ------
+   t5 = GET:I32(32)
+   t24 = Sub32(t22,0x4:I32)
+   PUT(24) = t24
+   STle(t24) = t5
+   PUT(68) = 0x4004C85:I32
+   ------ IMark(0x4004C85, 1, 0) ------
+   t7 = GET:I32(20)
+   t26 = Sub32(t24,0x4:I32)
+   PUT(24) = t26
+   STle(t26) = t7
+   ------ IMark(0x4004C86, 3, 0) ------
+   t9 = Sub32(t26,0x5C:I32)
+   PUT(40) = 0x6:I32
+   PUT(44) = t26
+   PUT(48) = 0x5C:I32
+   PUT(52) = 0x0:I32
+   PUT(68) = 0x4004C89:I32
+   ------ IMark(0x4004C89, 5, 0) ------
+   t28 = Sub32(t9,0x4:I32)
+   PUT(24) = t28
+   STle(t28) = 0x4004C8E:I32
+   PUT(68) = 0x4018BAB:I32
+   ------ IMark(0x4018BAB, 3, 0) ------
+   t30 = LDle:I32(t28)
+   PUT(20) = t30
+   PUT(68) = 0x4018BAE:I32
+   ------ IMark(0x4018BAE, 1, 0) ------
+   t15 = LDle:I32(t28)
+   t31 = Add32(t28,0x4:I32)
+   PUT(24) = t31
+   PUT(68) = t15; exit-Return
+}
+********Print sb_out********
+IRSB {
+   t0:I32   t1:I32   t2:I32   t3:I32   t4:I32   t5:I32   t6:I32   t7:I32
+   t8:I32   t9:I32   t10:I32   t11:I32   t12:I32   t13:I32   t14:I32   t15:I32
+   t16:I32   t17:I32   t18:I32   t19:I32   t20:I32   t21:I32   t22:I32   t23:I32
+   t24:I32   t25:I32   t26:I32   t27:I32   t28:I32   t29:I32   t30:I32   t31:I32
+   t32:I32   t33:I32   t34:I32   t35:I32   t36:I32   t37:I32   t38:I32   t39:I32
+   t40:I32   t41:I32   t42:I32   t43:I32   t44:I32   t45:I32   t46:I32   t47:I32
+   t48:I32   t49:I32   t50:I32   t51:I32   t52:I32   t53:I32   t54:I32   t55:I32
+   t56:I32   t57:I32   t58:I32   t59:I32   t60:I32   t61:I32   t62:I32   t63:I32
+   t64:I32   t65:I32   
+
+   ------ IMark(0x40011D0, 2, 0) ------
+   t16 = GET:I32(24)
+   t33 = GET:I32(360)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7EFB8:I32,t16,t33)
+   PUT(344) = t33
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F000:I32,t16,t33)
+   PUT(8) = t16
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F068:I32,0x40011D2:I32,0x0:I32)
+   PUT(68) = 0x40011D2:I32
+   ------ IMark(0x40011D2, 5, 0) ------
+   t17 = Sub32(t16,0x4:I32)
+   t34 = Or32(t33,0x0:I32)
+   t35 = Left32(t34)
+   t36 = t35
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F138:I32,t17,t36)
+   PUT(360) = t36
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F2C0:I32,t17,t36)
+   PUT(24) = t17
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tc)[rp=3]{0x380345e0}(0x61C7F348:I32,0x40011D7:I32,0x0:I32)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t17,0x0:I32)
+   STle(t17) = 0x40011D7:I32
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F3B0:I32,0x4004C80:I32,0x0:I32)
+   PUT(68) = 0x4004C80:I32
+   ------ IMark(0x4004C80, 1, 0) ------
+   t1 = GET:I32(28)
+   t37 = GET:I32(364)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7F420:I32,t1,t37)
+   t19 = Sub32(t17,0x4:I32)
+   t38 = Or32(t36,0x0:I32)
+   t39 = Left32(t38)
+   t40 = t39
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F4C8:I32,t19,t40)
+   PUT(360) = t40
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F1A0:I32,t19,t40)
+   PUT(24) = t19
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7F208:I32,t1,t37)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t19,t37)
+   STle(t19) = t1
+   ------ IMark(0x4004C81, 2, 0) ------
+   PUT(364) = t40
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F278:I32,t19,t40)
+   PUT(28) = t19
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F6F8:I32,0x4004C83:I32,0x0:I32)
+   PUT(68) = 0x4004C83:I32
+   ------ IMark(0x4004C83, 1, 0) ------
+   t3 = GET:I32(36)
+   t41 = GET:I32(372)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7F768:I32,t3,t41)
+   t22 = Sub32(t19,0x4:I32)
+   t42 = Or32(t40,0x0:I32)
+   t43 = Left32(t42)
+   t44 = t43
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F810:I32,t22,t44)
+   PUT(360) = t44
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F858:I32,t22,t44)
+   PUT(24) = t22
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7F8C0:I32,t3,t41)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t22,t41)
+   STle(t22) = t3
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F928:I32,0x4004C84:I32,0x0:I32)
+   PUT(68) = 0x4004C84:I32
+   ------ IMark(0x4004C84, 1, 0) ------
+   t5 = GET:I32(32)
+   t45 = GET:I32(368)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7F998:I32,t5,t45)
+   t24 = Sub32(t22,0x4:I32)
+   t46 = Or32(t44,0x0:I32)
+   t47 = Left32(t46)
+   t48 = t47
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7FA40:I32,t24,t48)
+   PUT(360) = t48
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7FA88:I32,t24,t48)
+   PUT(24) = t24
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7FAF0:I32,t5,t45)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t24,t45)
+   STle(t24) = t5
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FB58:I32,0x4004C85:I32,0x0:I32)
+   PUT(68) = 0x4004C85:I32
+   ------ IMark(0x4004C85, 1, 0) ------
+   t7 = GET:I32(20)
+   t49 = GET:I32(356)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_get)[rp=3]{0x3802abf0}(0x61C7FBC8:I32,t7,t49)
+   t26 = Sub32(t24,0x4:I32)
+   t50 = Or32(t48,0x0:I32)
+   t51 = Left32(t50)
+   t52 = t51
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7FC70:I32,t26,t52)
+   PUT(360) = t52
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7FCB8:I32,t26,t52)
+   PUT(24) = t26
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tt)[rp=3]{0x380348a0}(0x61C7FD20:I32,t7,t49)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t26,t49)
+   STle(t26) = t7
+   ------ IMark(0x4004C86, 3, 0) ------
+   t9 = Sub32(t26,0x5C:I32)
+   t53 = Or32(t52,0x0:I32)
+   t54 = Left32(t53)
+   t55 = t54
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7FDF0:I32,t9,t55)
+   PUT(376) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FE58:I32,0x6:I32,0x0:I32)
+   PUT(40) = 0x6:I32
+   PUT(380) = t52
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7FEA0:I32,t26,t52)
+   PUT(44) = t26
+   PUT(384) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FF08:I32,0x5C:I32,0x0:I32)
+   PUT(48) = 0x5C:I32
+   PUT(388) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FF70:I32,0x0:I32,0x0:I32)
+   PUT(52) = 0x0:I32
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7FFD8:I32,0x4004C89:I32,0x0:I32)
+   PUT(68) = 0x4004C89:I32
+   ------ IMark(0x4004C89, 5, 0) ------
+   t28 = Sub32(t9,0x4:I32)
+   t56 = Or32(t55,0x0:I32)
+   t57 = Left32(t56)
+   t58 = t57
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C800A8:I32,t28,t58)
+   PUT(360) = t58
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C800F0:I32,t28,t58)
+   PUT(24) = t28
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_store_tc)[rp=3]{0x380345e0}(0x61C80178:I32,0x4004C8E:I32,0x0:I32)
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_STOREV32le)[rp=2]{0x38029b90}(t28,0x0:I32)
+   STle(t28) = 0x4004C8E:I32
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C801E0:I32,0x4018BAB:I32,0x0:I32)
+   PUT(68) = 0x4018BAB:I32
+   ------ IMark(0x4018BAB, 3, 0) ------
+   t30 = LDle:I32(t28)
+   t59 = DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_LOADV32le)[rp=1]{0x38029a40}(t28)
+   t60 = t59
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_load_t)[rp=3]{0x38033df0}(0x61C80270:I32,t30,t60)
+   PUT(356) = t60
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C7F510:I32,t30,t60)
+   PUT(20) = t30
+   PUT(404) = 0x0:I32
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_c)[rp=3]{0x3802b290}(0x61C7F578:I32,0x4018BAE:I32,0x0:I32)
+   PUT(68) = 0x4018BAE:I32
+   ------ IMark(0x4018BAE, 1, 0) ------
+   t15 = LDle:I32(t28)
+   t61 = DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(helperc_LOADV32le)[rp=1]{0x38029a40}(t28)
+   t62 = t61
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_load_t)[rp=3]{0x38033df0}(0x61C7F608:I32,t15,t62)
+   t31 = Add32(t28,0x4:I32)
+   t63 = Or32(t58,0x0:I32)
+   t64 = Left32(t63)
+   t65 = t64
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_binop_tc)[rp=3]{0x3802bc40}(0x61C7F6B0:I32,t31,t65)
+   PUT(360) = t65
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_put_t)[rp=3]{0x3802afc0}(0x61C80598:I32,t31,t65)
+   PUT(24) = t31
+   DIRTY 1:I1 RdFX-gst(24,4) RdFX-gst(68,4) ::: TNT_(h32_next_t)[rp=3]{0x3802a9c0}(0x61C805C0:I32,t15,t62)
+   PUT(68) = t15; exit-Return
+}

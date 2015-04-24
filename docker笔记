@@ -1,0 +1,23 @@
+1. 开启docker服务
+$ systemctl start docker
+2. 查找远程镜像
+$ sudo docker search ubuntu
+3. 下载远程镜像
+$ sudo docker pull ubuntu
+4. 查看本地镜像
+$ sudo docker images
+5. 使用镜像(创建容器)
+$ sudo docker run image_name command
+6. 查看容器
+$ sudo docker ps	#查看正在运行的容器
+$ sudo docker ps -l	#查看拿最近一次创建的容器
+$ sudo docker ps -a	#查看所有容器
+$ sudo docker ps -h	#其它命令
+7. 开启/bin/bash
+$ sudo docker run ubuntu -i -t /bin/bash	#-i:保持STDIN开启；-t:分配终端；-h:其它命令
+
+
+安装桌面环境(https://github.com/rogaha/docker-desktop)
+$ git clone https://github.com/rogaha/docker-desktop.git
+$ cd docker-desktop
+$ docker build -t skyin/docker-desktop .	#build:创建镜像；-t <tag_name>：定义镜像标签名

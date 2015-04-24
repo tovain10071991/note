@@ -1,0 +1,465 @@
+# CentOS 64bit
+
+#pin-2.14-67254-gcc.4.4.7-linux/source/tools/SimpleExamples/makefile
+
+CONFIG_ROOT := ../Config
+include $(CONFIG_ROOT)/makefile.config
+include makefile.rules
+include $(TOOLS_ROOT)/Config/makefile.default.rules
+
+#pin-2.14-67254-gcc.4.4.7-linux/source/tools/Config/makefile.config
+
+KIT := 1
+COMPILER := gcc
+TARGET_OS := linux
+include $(CONFIG_ROOT)/unix.vars
+include $(CONFIG_ROOT)/makefile.unix.config
+
+#pin-2.14-67254-gcc.4.4.7-linux/source/tools/Config/unix.vars
+
+HOST_ARCH := intel64
+BITS := 64
+TARGET ?= $(HOST_ARCH) = intel64
+OBJDIR := obj-$(TARGET)/ = obj-intel64/
+HOST_OS := linux
+OS_TYPE := unix
+EXE_SUFFIX :=
+OBJ_SUFFIX := .o
+DLL_SUFFIX := .so
+PINTOOL_SUFFIX := $(DLL_SUFFIX) = .so
+SATOOL_SUFFIX :=
+LIB_SUFFIX := .a
+ASM_SUFFIX := .s
+DLL_PREFIX := lib
+
+# CMD_PREFIX undefined 
+RM := $(CMD_PREFIX) rm = rm
+PYTHON := $(CMD_PREFIX) python = python
+DIFF := $(CMD_PREFIX) diff -w = diff -w
+CMP := $(CMD_PREFIX) cmp
+CMD :=
+SH := $(CMD_PREFIX) sh
+GREP := $(CMD_PREFIX) grep
+QGREP := $(CMD_PREFIX) grep -q
+CGREP := $(CMD_PREFIX) grep -c
+EGREP := $(CMD_PREFIX) egrep
+PGREP := $(CMD_PREFIX) pgrep
+LINECOUNT := $(CMD_PREFIX) wc -l
+BASHTEST := $(CMD_PREFIX) test
+TOUCH := $(CMD_PREFIX) touch
+STRIP := /usr/bin/strip
+SORT := $(CMD_PREFIX) sort
+SED := $(CMD_PREFIX) sed
+EXPR := $(CMD_PREFIX) expr
+
+#pin-2.14-67254-gcc.4.4.7-linux/source/tools/Config/makefile.unix.config
+
+PIN_TESTFLAGS :=
+MAKE_TESTFLAGS :=
+COMP_OBJ :=
+COMP_EXE :=
+LINK_EXE :=
+NO_RANDOM :=
+PIC := -fPIC
+NO_PIC :=
+NO_PIE :=
+SSE2 := -msse2
+FP387 := -mfpmath=387 -mno-sse
+ASMCPP := -x assembler-with-cpp
+APP_INCLUDES :=
+TOOL_INCLUDES :=
+APP_LPATHS :=
+TOOL_LPATHS :=
+SATOOL_LPATHS :=
+CXX_LPATHS :=
+DL_LIB :=
+APP_LIB_ATOMIC := -latomic
+APP_LIB_XED := -lxed
+TOOL_LIBS := -lpin -lxed
+SATOOL_LIBS := -lsapin -lxed
+CXX_LIBS :=
+APP_CXXFLAGS_NOOPT :=
+TOOL_CXXFLAGS_NOOPT := -DBIGARRAY_MULTIPLIER=1 -Wall -Werror -Wno-unknown-pragmas
+DLL_CXXFLAGS :=
+ENABLE_DEPRECATED := -DPIN_DEPRECATED_WARNINGS=0
+APP_LDFLAGS_NOOPT :=
+TOOL_LDFLAGS_NOOPT := -shared
+SATOOL_LDFLAGS_NOOPT :=
+DLL_LDFLAGS := -shared
+APP_LDFLAGS_LINK_ASM :=
+ifeq ($(DEBUG),1)
+    APP_OPT_CXX := -O0
+    APP_OPT_LD :=
+    TOOL_OPT_CXX := -O0
+    TOOL_OPT_LD :=
+    DBG_INFO_CXX := -g
+    DBG_INFO_LD := -g
+else
+    APP_OPT_CXX := -O3
+    APP_OPT_LD :=
+    TOOL_OPT_CXX := -O3 -fomit-frame-pointer -fno-strict-aliasing
+    TOOL_OPT_LD :=
+    DBG_INFO_CXX :=
+    DBG_INFO_LD :=
+endif
+DBG_INFO_CXX_ALWAYS := -g
+DBG_INFO_LD_ALWAYS := -g
+CCPATH := $(shell which $(CC) 2> /dev/null)
+CXXPATH := $(shell which $(CXX) 2> /dev/null)
+ifneq ($(CCPATH),)
+    HELPOUT := $(shell $(CC) -v --help 2>&1)
+endif
+ifeq ($(KIT),1)
+    PIN_ROOT ?= ../../..
+    XED_ROOT := $(PIN_ROOT)/extras/xed2-$(TARGET)
+    TOOLS_ROOT := $(PIN_ROOT)/source/tools
+    
+    COMPONENT_INCLUDES := -I$(PIN_ROOT)/extras/components/include
+    TOOL_INCLUDES += -I$(PIN_ROOT)/source/include/pin \
+                     -I$(PIN_ROOT)/source/include/pin/gen
+    ifeq ($(TARGET_OS),linux)
+        ifneq ($(CXXPATH),)
+            REQUIRES_PIN_CPP_RUNTIME := $(shell $(TOOLS_ROOT)/Utils/testGccVersion $(CXXPATH) 4.5)	#检查g++版本是否小于4.5
+        endif
+    endif
+    
+    ifeq ($(REQUIRES_PIN_CPP_RUNTIME),1)
+        TOOL_LPATHS += -L$(PIN_ROOT)/$(TARGET)/runtime/cpplibs
+        SATOOL_LPATHS += -L$(PIN_ROOT)/$(TARGET)/runtime/cpplibs
+        TOOL_LDFLAGS_NOOPT += -Wl,-rpath=$(PIN_ROOT)/$(TARGET)/runtime/cpplibs
+        SATOOL_LDFLAGS_NOOPT += -Wl,-rpath=$(PIN_ROOT)/$(TARGET)/runtime/cpplibs
+    endif
+    
+    APP_LPATHS += -L$(PIN_ROOT)/extras/components/lib/$(TARGET)
+    TOOL_LPATHS += -L$(PIN_ROOT)/$(TARGET)/lib \
+                   -L$(PIN_ROOT)/$(TARGET)/lib-ext \
+                   -L$(PIN_ROOT)/$(TARGET)/runtime/glibc
+    SATOOL_LPATHS += -L$(PIN_ROOT)/$(TARGET)/lib \
+                     -L$(PIN_ROOT)/$(TARGET)/lib-ext
+    
+    PIN := $(PIN_ROOT)/pin
+    PINBIN := $(PIN_ROOT)/$(TARGET)/bin/pinbin
+    PIN32 := $(PIN_ROOT)/ia32/bin/pinbin
+    PIN64 := $(PIN_ROOT)/intel64/bin/pinbin
+    
+    VSCRIPT_DIR := $(PIN_ROOT)/source/include/pin
+endif
+
+TOOL_INCLUDES += $(COMPONENT_INCLUDES) \
+                 -I$(XED_ROOT)/include \
+                 -I$(TOOLS_ROOT)/InstLib
+APP_LPATHS += -L$(XED_ROOT)/lib
+TOOL_LPATHS += -L$(XED_ROOT)/lib
+SATOOL_LPATHS += -L$(XED_ROOT)/lib
+ifeq ($(TARGET),intel64)
+    APP_CXXFLAGS_NOOPT += -DTARGET_IA32E -DHOST_IA32E -DFUND_TC_TARGETCPU=FUND_CPU_INTEL64 -DFUND_TC_HOSTCPU=FUND_CPU_INTEL64
+    TOOL_CXXFLAGS_NOOPT += -DTARGET_IA32E -DHOST_IA32E -fPIC
+    DLL_CXXFLAGS += -fPIC
+endif
+ifeq ($(TARGET_OS),linux)
+    APP_CXXFLAGS_NOOPT += -DTARGET_LINUX -DFUND_TC_TARGETOS=FUND_OS_LINUX -DFUND_TC_HOSTOS=FUND_OS_LINUX
+    TOOL_CXXFLAGS_NOOPT += -DTARGET_LINUX
+    APP_LIBS += -ldl -lpthread
+    DL_LIB += -ldl
+    TOOL_LIBS += -ldwarf -lelf -ldl
+    SATOOL_LIBS += -Wl,-Bstatic -ldwarf -lelf -Wl,-Bdynamic -ldl
+    TOOL_LDFLAGS_NOOPT += -Wl,-Bsymbolic -Wl,--version-script=$(VSCRIPT_DIR)/pintool.ver
+    SATOOL_LDFLAGS_NOOPT += -Wl,-Bsymbolic
+    DWARF4 += -gdwarf-4
+endif
+COMP_OBJ += -c -o 
+COMP_EXE += -o 
+LINK_EXE += -o
+ASM_FLAGS := $(APP_CXXFLAGS_NOOPT) $(ASMCPP)
+APP_CXXFLAGS_NOOPT += $(APP_INCLUDES)
+TOOL_CXXFLAGS_NOOPT += $(TOOL_INCLUDES)
+APP_CXXFLAGS := $(APP_CXXFLAGS_NOOPT) $(APP_OPT_CXX) $(DBG_INFO_CXX)
+APP_LDFLAGS := $(APP_LDFLAGS_NOOPT) $(APP_OPT_LD) $(DBG_INFO_LD)
+TOOL_CXXFLAGS := $(TOOL_CXXFLAGS_NOOPT) $(TOOL_OPT_CXX) $(DBG_INFO_CXX)
+TOOL_LDFLAGS := $(TOOL_LDFLAGS_NOOPT) $(TOOL_OPT_LD) $(DBG_INFO_LD)
+SATOOL_LDFLAGS := $(SATOOL_LDFLAGS_NOOPT) $(TOOL_OPT_LD) $(DBG_INFO_LD)
+APP_CXXFLAGS_NOOPT += -O0 $(DBG_INFO_CXX)
+APP_LDFLAGS_NOOPT += $(DBG_INFO_LD)
+TOOL_CXXFLAGS_NOOPT += -O0 $(DBG_INFO_CXX)
+TOOL_LDFLAGS_NOOPT += $(DBG_INFO_LD)
+PIN += $(PIN_TESTFLAGS) $(PINFLAGS)
+
+#pin-2.14-67254-gcc.4.4.7-linux/source/tools/Config/makefile.config
+
+# Define the applications' compiler
+APP_CC := $(CC)
+APP_CXX := $(CXX)
+
+# Define the test application
+TESTAPP := $(TOOLS_ROOT)/Utils/$(OBJDIR)cp-pin$(EXE_SUFFIX)
+HELLO_APP := $(TOOLS_ROOT)/Utils/$(OBJDIR)hello$(EXE_SUFFIX)
+HELLO_APP_DWARF4 := $(TOOLS_ROOT)/Utils/$(OBJDIR)hello_dwarf4$(EXE_SUFFIX)
+
+# Define the HW check utilities
+CHECKAVX := $(TOOLS_ROOT)/Utils/$(OBJDIR)avx_check$(EXE_SUFFIX)
+CHECKAVX2 := $(TOOLS_ROOT)/Utils/$(OBJDIR)avx2_check$(EXE_SUFFIX)
+CHECKTSX := $(TOOLS_ROOT)/Utils/$(OBJDIR)tsx_check$(EXE_SUFFIX)
+
+# Define the thread utilities library
+THREADLIB := $(TOOLS_ROOT)/Utils/$(OBJDIR)threadlib$(OBJ_SUFFIX)
+
+# Define the regval utilities library
+REGVALLIB := $(TOOLS_ROOT)/Utils/$(OBJDIR)regvallib$(LIB_SUFFIX)
+
+# Define the controller utilities library
+CONTROLLERLIB := $(TOOLS_ROOT)/InstLib/$(OBJDIR)controller$(LIB_SUFFIX)
+
+# Common object files
+SUPPORTS_AVX_OBJ := $(TOOLS_ROOT)/Utils/$(OBJDIR)supports_avx$(OBJ_SUFFIX)
+SUPPORTS_AVX2_OBJ := $(TOOLS_ROOT)/Utils/$(OBJDIR)supports_avx2$(OBJ_SUFFIX)
+
+# Python comparison script
+PYCOMPARE := $(PYTHON) $(TOOLS_ROOT)/Utils/compare.py
+
+all: objects libs dlls apps tools
+
+# Accelerate the make process and prevent errors.
+.PHONY: all
+
+#pin-2.14-67254-gcc.4.4.7-linux/source/tools/SimpleExamples/makefile.rules
+
+TEST_TOOL_ROOTS := dcache edgcnt pinatrace trace icount inscount2_mt opcodemix malloctrace calltrace jumpmix toprtn catmix regmix ilenmix coco extmix get_source_location xed-print xed-use ldstmix topopcode regval
+TEST_ROOTS :=
+SANITY_SUBSET := get_source_location regval
+TOOL_ROOTS :=
+APP_ROOTS := get_source_app regval_app
+OBJECT_ROOTS :=
+DLL_ROOTS :=
+LIB_ROOTS :=
+GET_SOURCE_DEBUG_FILE := get_source_app:$(OBJDIR)get_source_app
+ifeq ($(TARGET),intel64)
+    TEST_TOOL_ROOTS += inscount2_vregs
+endif
+ifeq ($(TARGET_OS),linux)
+    ifeq ($(TARGET),intel64)
+        TEST_TOOL_ROOTS += fence
+    endif
+endif
+
+# 规则
+
+get_source_location.test: $(OBJDIR)get_source_location$(PINTOOL_SUFFIX) $(OBJDIR)get_source_app$(EXE_SUFFIX)
+	$(PIN) -t $(OBJDIR)get_source_location$(PINTOOL_SUFFIX) -dwarf_file $(GET_SOURCE_DEBUG_FILE) -- $(OBJDIR)get_source_app$(EXE_SUFFIX) > $(OBJDIR)get_source_location.out 2>&1
+	$(QGREP) "get_source_app.cpp:3" $(OBJDIR)get_source_location.out 
+	$(QGREP) "get_source_app.cpp:4" $(OBJDIR)get_source_location.out 
+	$(QGREP) "get_source_app.cpp:5" $(OBJDIR)get_source_location.out 
+	$(RM) $(OBJDIR)get_source_location.out
+
+regval.test: $(OBJDIR)regval$(PINTOOL_SUFFIX) $(OBJDIR)regval_app$(EXE_SUFFIX)
+	$(PIN) -t $(OBJDIR)regval$(PINTOOL_SUFFIX) -o $(OBJDIR)regval.out -- $(OBJDIR)regval_app$(EXE_SUFFIX)
+	$(RM) $(OBJDIR)regval.out
+
+$(OBJDIR)opcodemix$(PINTOOL_SUFFIX): $(OBJDIR)opcodemix$(OBJ_SUFFIX) $(CONTROLLERLIB)
+	$(LINKER) $(TOOL_LDFLAGS) $(LINK_EXE)$@ $^ $(TOOL_LPATHS) $(TOOL_LIBS)
+
+$(OBJDIR)regval$(PINTOOL_SUFFIX): $(OBJDIR)regval$(OBJ_SUFFIX) $(REGVALLIB)
+	$(LINKER) $(TOOL_LDFLAGS) $(LINK_EXE)$@ $^ $(TOOL_LPATHS) $(TOOL_LIBS)
+
+$(OBJDIR)get_source_app$(EXE_SUFFIX): get_source_app.cpp
+	$(APP_CXX) $(APP_CXXFLAGS_NOOPT) $(DBG_INFO_CXX_ALWAYS) $(COMP_EXE)$@ $< $(APP_LDFLAGS_NOOPT) $(APP_LIBS) $(CXX_LPATHS) $(CXX_LIBS) $(DBG_INFO_LD_ALWAYS)
+
+$(OBJDIR)regval_app$(EXE_SUFFIX): regval_app.cpp
+	$(APP_CXX) $(APP_CXXFLAGS_NOOPT) $(COMP_EXE)$@ $< $(APP_LDFLAGS_NOOPT) $(APP_LIBS) $(CXX_LPATHS) $(CXX_LIBS)
+
+#pin-2.14-67254-gcc.4.4.7-linux/source/tools/Config/makefile.default.rules
+
+TESTS := $(TEST_TOOL_ROOTS:%=%.wrap) $(TEST_ROOTS:%=%.wrap)
+SANITY := $(SANITY_SUBSET:%=%.wrap)
+TOOLS := $(TEST_TOOL_ROOTS:%=$(OBJDIR)%$(PINTOOL_SUFFIX)) $(TOOL_ROOTS:%=$(OBJDIR)%$(PINTOOL_SUFFIX))
+SA_TOOLS := $(SA_TOOL_ROOTS:%=$(OBJDIR)%)
+APPS := $(APP_ROOTS:%=$(OBJDIR)%$(EXE_SUFFIX))
+OBJECTS := $(OBJECT_ROOTS:%=$(OBJDIR)%$(OBJ_SUFFIX))
+DLLS := $(DLL_ROOTS:%=$(OBJDIR)$(DLL_PREFIX)%$(DLL_SUFFIX))
+LIBS := $(LIB_ROOTS:%=$(OBJDIR)%$(LIB_SUFFIX))
+
+dir: $(OBJDIR)
+
+obj-%:
+	mkdir -p $@
+
+$(TESTS) $(SANITY): %: | dir
+$(TOOLS) $(TOOLS:%$(PINTOOL_SUFFIX)=%$(OBJ_SUFFIX)) $(SA_TOOLS) $(SA_TOOLS:%=%$(OBJ_SUFFIX)): %: | dir
+$(APPS) $(OBJECTS) $(DLLS) $(LIBS): %: | dir
+
+tools: dir $(TOOLS) $(SA_TOOLS)
+
+# Build the applications.
+apps: dir $(APPS)
+
+# Build the additional object files.
+objects: dir $(OBJECTS)
+
+# Build the additional dlls.
+dlls: dir $(DLLS)
+
+# Build the static libraries.
+libs: dir $(LIBS)
+
+# Build the program which checks the hardware for avx support.
+avxcheck: $(CHECKAVX)
+
+# Build the program which checks the hardware for avx2 support.
+avx2check: $(CHECKAVX2)
+
+# Build the program which checks the hardware for tsx support.
+tsxcheck: $(CHECKTSX)
+
+###### Install ######
+
+# On certain machines (e.g. mic, android), this would also copy the binaries to the remote target.
+install: all
+	$(INSTALLER) $(INSTALL_FLAGS)
+	@echo install complete!
+
+###### Test ######
+
+# Run all tests.
+test: $(TESTS)
+
+# Run the "short" sanity list. 
+sanity: $(SANITY)
+
+summary:
+	$(TOOLS_ROOT)/Utils/testsummary
+
+###### Cleanup ######
+
+# Remove any files that were created by the make process.
+clean:
+	-rm -rf $(OBJDIR) *.out* *.log* *.xml *.makefile.copy *.core core.*
+
+clean-remote:
+	-$(INSTALLER) $(INSTALL_FLAGS) --clean
+
+###### Build the common components - for internal use ###### 
+
+$(TESTAPP):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)cp-pin$(EXE_SUFFIX)
+
+$(HELLO_APP):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)hello$(EXE_SUFFIX)
+
+$(HELLO_APP_DWARF4):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)hello_dwarf4$(EXE_SUFFIX)
+
+$(CHECKAVX):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)avx_check$(EXE_SUFFIX)
+
+$(CHECKAVX2):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)avx2_check$(EXE_SUFFIX)
+
+$(CHECKTSX):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)tsx_check$(EXE_SUFFIX)
+
+$(THREADLIB):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)threadlib$(OBJ_SUFFIX)
+
+$(REGVALLIB):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)regvallib$(LIB_SUFFIX)
+
+$(CONTROLLERLIB):
+	$(MAKE) -C $(TOOLS_ROOT)/InstLib dir $(OBJDIR)controller$(LIB_SUFFIX)
+
+$(SUPPORTS_AVX_OBJ):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)supports_avx$(OBJ_SUFFIX)
+
+$(SUPPORTS_AVX2_OBJ):
+	$(MAKE) -C $(TOOLS_ROOT)/Utils dir $(OBJDIR)supports_avx2$(OBJ_SUFFIX)
+
+###### Automated testing utilities - for internal use ######
+
+$(OBJDIR)%.tested:
+	touch $@
+
+$(OBJDIR)%.failed:
+	touch $@
+
+# Prevent these from being deleted if the test recipe fails.
+.PRECIOUS: $(OBJDIR)%.tested $(OBJDIR)%.failed
+
+# Don't delete the files generated in the Utils directory.
+.PRECIOUS: $(TESTAPP) $(CHECKAVX) $(CHECKAVX2) $(CHECKTSX) $(THREADLIB)
+.PRECIOUS: $(SUPPORTS_AVX_OBJ) $(SUPPORTS_AVX2_OBJ)
+
+# Accelerate the make process and prevent errors.
+.PHONY: tools apps objects dlls libs avxcheck tsxcheck install test sanity summary clean %.test %.wrap
+
+# Build the intermediate object file.
+$(OBJDIR)%$(OBJ_SUFFIX): %.cpp
+	$(CXX) $(TOOL_CXXFLAGS) $(COMP_OBJ)$@ $<
+
+# Build the intermediate object file.
+$(OBJDIR)%$(OBJ_SUFFIX): %.c
+	$(CC) $(TOOL_CXXFLAGS) $(COMP_OBJ)$@ $<
+
+# Build the tool as a dll (shared object).
+$(OBJDIR)%$(PINTOOL_SUFFIX): $(OBJDIR)%$(OBJ_SUFFIX)
+	$(LINKER) $(TOOL_LDFLAGS) $(LINK_EXE)$@ $< $(TOOL_LPATHS) $(TOOL_LIBS)
+
+# Build the static analysis tools.
+$(SA_TOOLS): %: %$(OBJ_SUFFIX)
+	$(LINKER) $(SATOOL_LDFLAGS) $(LINK_EXE)$@ $< $(SATOOL_LPATHS) $(SATOOL_LIBS)
+
+# Don't delete the object files and dlls.
+.PRECIOUS: $(OBJDIR)%$(OBJ_SUFFIX) $(OBJDIR)%$(PINTOOL_SUFFIX)
+
+###### Default build rules for asm objects ######
+
+# Source and target have the same name.
+$(OBJDIR)%$(OBJ_SUFFIX): %$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+# Target name includes the string "_asm".
+$(OBJDIR)%_asm$(OBJ_SUFFIX): %$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+# Several source versions depending on architecture.
+$(OBJDIR)%$(OBJ_SUFFIX): %_$(TARGET)$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+# Same as above, but target name includes the string "_asm".
+$(OBJDIR)%_asm$(OBJ_SUFFIX): %_$(TARGET)$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+# Several source versions depending on OS type.
+$(OBJDIR)%$(OBJ_SUFFIX): %_$(OS_TYPE)$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+# Same as above, but target name includes the string "_asm".
+$(OBJDIR)%_asm$(OBJ_SUFFIX): %_$(OS_TYPE)$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+# Several source versions depending on architecture and OS type.
+$(OBJDIR)%$(OBJ_SUFFIX): %_$(TARGET)_$(OS_TYPE)$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+# Same as above, but target name includes the string "_asm".
+$(OBJDIR)%_asm$(OBJ_SUFFIX): %_$(TARGET)_$(OS_TYPE)$(ASM_SUFFIX)
+	$(ASMBLR) $(ASM_FLAGS) $(COMP_OBJ)$@ $<
+
+###### Default build rules for applications ######
+
+$(OBJDIR)%$(EXE_SUFFIX): %.cpp
+	$(APP_CXX) $(APP_CXXFLAGS) $(COMP_EXE)$@ $< $(APP_LDFLAGS) $(APP_LIBS) $(CXX_LPATHS) $(CXX_LIBS)
+
+$(OBJDIR)%$(EXE_SUFFIX): %.c
+	$(APP_CC) $(APP_CXXFLAGS) $(COMP_EXE)$@ $< $(APP_LDFLAGS) $(APP_LIBS)
+
+# This wrapper is used by the nightly testing system. No need to use it outside of this file.
+%.wrap: $(OBJDIR) $(OBJDIR)%.tested $(OBJDIR)%.failed
+	$(MAKE) $(@:.wrap=.test) $(MAKE_TESTFLAGS)
+	rm $(OBJDIR)$(@:.wrap=.failed)
+
+# Not all tools produce output so the .out file might not be created. We don't want the test to fail in this case,
+# so we ignore possible failures of the final rm command.
+%.test: $(OBJDIR) $(OBJDIR)%$(PINTOOL_SUFFIX) $(TESTAPP)
+	$(PIN) -t $(OBJDIR)$(@:.test=)$(PINTOOL_SUFFIX) -- $(TESTAPP) makefile $(OBJDIR)$(@:.test=.makefile.copy) \
+	  > $(OBJDIR)$(@:.test=.out) 2>&1
+	$(CMP) makefile $(OBJDIR)$(@:.test=.makefile.copy)
+	$(RM) $(OBJDIR)$(@:.test=.makefile.copy)
+	-$(RM) $(OBJDIR)$(@:.test=.out)
